@@ -1,0 +1,64 @@
+  <NavigationContainer>
+
+      {/* <BottomTabNavigator /> */}
+
+      {/* <MainStackNavigator /> */}
+
+      
+    
+
+<SafeAreaView>
+        <TextInput
+        // onChangeText={engw => setEngword(engw)}
+        // onChangeText={engw => setEngword(engw)}
+        onChangeText={newText => setEngword(newText)}
+        placeholder= 'english-word'
+       // value={engword}
+        defaultValue={text}
+        />
+        <Text>{text}</Text>
+      </SafeAreaView>
+
+
+  
+    {/* <Drawer.Navigator initialRouteName="Learn">
+      
+      <Drawer.Screen name="Words" component={WordsScreen} />
+      <Drawer.Screen name="Learn" component={LearnWordsScreen} />
+      <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+    </Drawer.Navigator> */}
+  </NavigationContainer>
+
+
+
+    // <SafeAreaView style={backgroundStyle}>
+    //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    //   <ScrollView
+    //     contentInsetAdjustmentBehavior="automatic"
+    //     style={backgroundStyle}>
+    //     <Header />
+    //     <View
+    //       style={{
+    //         backgroundColor: isDarkMode ? Colors.black : Colors.white,
+    //       }}>
+
+    //         <EWords />
+
+
+    //       <Section title="Step One">
+    //         Edit <Text style={styles.highlight}>App.js</Text> to change this
+    //         screen and then come back to see your edits.
+    //       </Section>
+    //       <Section title="See Your Changes">
+    //         <ReloadInstructions />
+    //       </Section>
+    //       <Section title="Debug">
+    //         <DebugInstructions />
+    //       </Section>
+    //       <Section title="Learn More">
+    //         Read the docs to discover what to do next:
+    //       </Section>
+    //       <LearnMoreLinks />
+    //     </View>
+    //   </ScrollView>
+    // </SafeAreaView>

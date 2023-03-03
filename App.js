@@ -26,7 +26,12 @@ import { useState, useEffect} from 'react';
 import * as React from 'react';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import { DrawerRouter, NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+//import TabNavigator from './TabNavigator';
 
 import type {Node} from 'react';
 import {
@@ -50,6 +55,131 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import EWords from './EWords';
 import { Formik } from 'formik';
+
+import { Main } from './Screens/Main';
+
+const Stack = createStackNavigator();
+
+// const Main = () => {
+//   return (
+//     <Text>Main</Text>
+//   )
+// }
+
+
+const Main2Screen = ({props}) => {
+  return (
+    <Text>lkajsdflkajsd</Text>
+  )
+}
+
+const Main1Screen = () => {
+  return (
+
+
+    <Tab.Navigator>
+      <Tab.Screen name='One' component={OneScreen} />
+      <Tab.Screen name='Two' component={TwoScreen} />
+    </Tab.Navigator>
+
+    
+
+
+
+  )
+}
+
+const OneScreen = () => {
+  return (
+    <View>
+      <Text>One Screen</Text>
+    </View>
+  )
+}
+
+const TwoScreen = () => {
+  return (
+    <View>
+      <Text>Two Screen</Text>
+    </View>
+  )
+}
+
+
+const LoginScreen = ({navigation}) => {
+  return (
+    <View>
+    <Text>Login</Text>
+
+    <TextInput
+            placeholder='email' />
+          <TextInput
+            placeholder='password' />
+
+    {/* <Button
+            title="Login" onPress={()=> navigation.navigate("Registration") }/> */}
+     <Button
+            title="Login" onPress={()=> navigation.navigate("Main") }/>
+         
+     <Text
+          onPress={()=> navigation.navigate('Registration')}
+          >
+            Don't have an account, click here to Sign Up
+    </Text>
+
+
+    </View>
+  )
+}
+
+
+
+const RegistrationScreen = () => {
+  return (
+    <Text>Registration</Text>
+  )
+}
+
+const MainStackNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Main" component={Main1Screen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Registration" component={RegistrationScreen} />
+    </Stack.Navigator>
+  )
+}
+
+
+
+const Tab = createBottomTabNavigator();
+
+const MainScreen = () => {
+  return (
+    <Text>Main Screennnnnnnnn</Text>
+  )
+}
+
+// const Main = () => {
+//   return (
+//     <Text>Main</Text>
+//   )
+// }
+
+const AvatarsScreen = () => {
+  return (
+    <Text>Avatars Screen</Text>
+  )
+}
+
+const BottomTabNavigator = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Main" component={MainScreen} />
+      <Tab.Screen name="Avatars" component={AvatarsScreen} />
+    </Tab.Navigator>
+  )
+}
 
 
 function HomeScreen({ navigation }) {
@@ -323,64 +453,13 @@ const App: () => Node = () => {
   return (
 
     <NavigationContainer>
-    
-
-<SafeAreaView>
-        <TextInput
-        // onChangeText={engw => setEngword(engw)}
-        // onChangeText={engw => setEngword(engw)}
-        onChangeText={newText => setEngword(newText)}
-        placeholder= 'english-word'
-       // value={engword}
-        defaultValue={text}
-        />
-        <Text>{text}</Text>
-      </SafeAreaView>
-
-
   
-    <Drawer.Navigator initialRouteName="Learn">
-      
-      <Drawer.Screen name="Words" component={WordsScreen} />
-      <Drawer.Screen name="Learn" component={LearnWordsScreen} />
-      <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-    </Drawer.Navigator>
-  </NavigationContainer>
-
-
-
-    // <SafeAreaView style={backgroundStyle}>
-    //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-    //   <ScrollView
-    //     contentInsetAdjustmentBehavior="automatic"
-    //     style={backgroundStyle}>
-    //     <Header />
-    //     <View
-    //       style={{
-    //         backgroundColor: isDarkMode ? Colors.black : Colors.white,
-    //       }}>
-
-    //         <EWords />
-
-
-    //       <Section title="Step One">
-    //         Edit <Text style={styles.highlight}>App.js</Text> to change this
-    //         screen and then come back to see your edits.
-    //       </Section>
-    //       <Section title="See Your Changes">
-    //         <ReloadInstructions />
-    //       </Section>
-    //       <Section title="Debug">
-    //         <DebugInstructions />
-    //       </Section>
-    //       <Section title="Learn More">
-    //         Read the docs to discover what to do next:
-    //       </Section>
-    //       <LearnMoreLinks />
-    //     </View>
-    //   </ScrollView>
-    // </SafeAreaView>
-    
+    <Stack.Navigator>
+    <Stack.Screen name="Login" component={LoginScreen} />
+    <Stack.Screen name="Main" component={Main1Screen} />
+    <Stack.Screen name="Registration" component={RegistrationScreen} />
+  </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

@@ -1,0 +1,47 @@
+const Main1Screen = ({navigation, route}) => {
+  return (
+
+
+
+
+   <View>
+          <Text>Mainnnnnn</Text>
+
+          <Drawer.Navigator>
+
+            <Drawer.Screen name='One' component={OneScreen} />
+            <Drawer.Screen name='Two' component={TwoScreen} />
+
+          </Drawer.Navigator>
+
+
+
+
+          {/* <TextInput
+            placeholder='email' />
+          <TextInput
+            placeholder='password' /> */}
+
+          {/* <Button
+            title="Login" onPress={()=> (Main2Screen) }/> */}
+           
+           
+            {/* <Button
+            title="Login" onPress={()=> props.navigation.navigate("Main2Screen") }/> */}
+           
+           
+             {/* <Button
+            title="Login" onClick={()=> navigation.navigate('Main') }/> */}
+
+          <Text
+          onPress={()=> navigation.navigate('Registration')}
+          >
+            Don't have an account, click here to Sign Up
+            
+            </Text>
+
+
+    </View>
+
+  )
+}
